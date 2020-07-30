@@ -5,6 +5,7 @@ import {
   Route
 } from 'react-router-dom'; 
 import SearchPage from '../searchcomponent/SearchPage';
+import ArtistSearchResults from '../display/ArtistSearchResults';
 // import Pagination from '../pagination/Pagination';
 
 export default function App() {
@@ -12,8 +13,8 @@ export default function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={SearchPage} />
+        <Route path="/artists" component={ArtistSearchResults} />
       </Switch>
     </Router>
   );
 }
-  
