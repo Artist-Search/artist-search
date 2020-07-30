@@ -6,12 +6,11 @@ export const getArtists = artistName => {
     }
   })
     .then(res => res.json()
-    )
-    .then(({ artist }) => ({
-      resultCount: artist.count,
-      offset: artist.offset,
-      artists: artist.artists
-      
-    })
-    .then(console.log(artist)))
+    );
+  // .then(results => results.map(result => ({
+  //   resultCount: result.count,
+  //   offset: result.offset,
+  //   artists: result.artists
+  // })));
+
 };
