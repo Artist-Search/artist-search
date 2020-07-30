@@ -1,6 +1,6 @@
 import React, { useState }  from 'react';
 import Pagination from '../components/pagination/Pagination';
-// 
+
 export const usePaginationHooks = () =>  {
   const [offset, setOffset] = useState(0);
   const [totalOffset, setTotalOffset] = useState(0);
