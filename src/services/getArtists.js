@@ -11,5 +11,7 @@ export const getArtists = artistName => {
       resultCount: artist.count,
       offset: artist.offset,
       artists: artist.artists
-    }));
+      
+    })
+      .then(console.log(artist)));
 };

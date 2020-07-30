@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 //preventDefault in hook
 
 const SearchForm = ({ searchQuery, onChange, onSubmit }) => {
+  
+  
   return (
     <form onSubmit={onSubmit}>
-      <input type="text" name="search-query" value={searchQuery} onChange={onChange} />
+      <input type="text" name="searchQuery" value={searchQuery} onChange={onChange} />
       <button>Search Artist</button>
     </form>
   );
