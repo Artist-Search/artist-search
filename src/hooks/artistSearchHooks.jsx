@@ -12,13 +12,13 @@ export const useArtistSearchHooks = () => {
       .then(({ artists }) => {
         setArtist(artist);
       })
-      .finally(() => setLoading(false))
+      .finally(() => setLoading(false));
   }, []);
 
 
   return {
     artist,
     loading 
-  }
+  };
  
 };

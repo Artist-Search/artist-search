@@ -3,22 +3,23 @@ import Pagination from '../components/pagination/Pagination';
 
 export const usePaginationHooks = () =>  {
   const [offset, setOffset] = useState(0);
-  const [totalOffset, setTotalOffset] = useState(0);
+  const [count, setCount] = useState(0);
 
-  const previousOffset = () => setOffset(offset => offset - 25, 0);
-  const nextOffset = () => setOffset(offset => offset + 25, totalOffset);
+  const prevPage = () => setOffset(offset => offset - 25, 0);
+  const nextPage = () => setOffset(offset => offset + 25, count);
 
   
   return {
     offset, 
-    previousOffset,
-    nextOffset, 
-    setTotalOffset, 
+    prevPage,
+    nextPage, 
+    count, 
     Pagination: (<Pagination 
-      totalOffset={totalOffset}
       offset={offset}
-      nextOffset={nextOffset}
-      setTotalOffset={setTotalOffset}
+      prevPage={prevPage}
+      nextPage={nextPage}
+      count={count}
+      setCount={setCount}
     />)
   };
 };
