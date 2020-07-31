@@ -14,9 +14,25 @@ export default class SearchPage extends Component {
     offset: 0
   }
 
-  prevPage = () => this.setState(state => ({ offset: state.offset - 25 }))
+  prevPage = () => {
+    const offset = this.state.offset - 25;
+    return getArtists(this.state.searchQuery, offset)
+      .then(searchResults => this.setState(state => ({
+        ...state,
+        searchResults,
+        offset
+      })));
+  }
 
-  nextPage = () => this.setState(state => ({ offset: state.offset + 25 }))
+  nextPage = () => {
+    const offset = this.state.offset + 25;
+    return getArtists(this.state.searchQuery, offset)
+      .then(searchResults => this.setState(state => ({
+        ...state,
+        searchResults,
+        offset
+      })));
+  }
 
   handleChange = ({ target }) => {
     this.setState({ searchQuery: target.value });
@@ -36,6 +52,8 @@ export default class SearchPage extends Component {
   render() {
     const { searchQuery } = this.state;
     const { count, offset, artists } = this.state.searchResults;
+
+    console.log('here is the offset', offset);
     
     return (
       <>
