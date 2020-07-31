@@ -5,16 +5,16 @@ import {
   Route
 } from 'react-router-dom'; 
 import SearchPage from '../searchcomponent/SearchPage';
-import ArtistSearchResults from '../display/ArtistSearchResults';
-import ArtistDiscography from '../display/ArtistDiscography';
+// import ArtistSearchResults from '../display/ArtistSearchResults';
+import DiscographyPage from '../display/DiscographyPage';
 
 export default function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/" component={SearchPage} />
-        <Route path="/artists" component={ArtistSearchResults} />
-        <Route path="/discography/:name:id" component={ArtistDiscography} />
+        {/* <Route path="/artists" component={ArtistSearchResults} /> */}
+        <Route path="/discography/:name:id" component={DiscographyPage} />
       </Switch>
     </Router>
   );

@@ -52,14 +52,13 @@ export default class SearchPage extends Component {
   render() {
     const { searchQuery } = this.state;
     const { count, offset, artists } = this.state.searchResults;
-
-    console.log('here is the offset', offset);
     
     return (
       <>
         <SearchForm onChange={this.handleChange} onSubmit={this.handleSubmit} searchQuery={searchQuery} />
 
         <Pagination count={count} offset={offset} prevPage={this.prevPage} nextPage={this.nextPage} />
+        
         <ArtistSearchResults artists={artists} />
       </ >
     );

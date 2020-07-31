@@ -8,7 +8,6 @@ export const usePaginationHooks = () =>  {
   const prevPage = () => setOffset(offset => offset - 25, 0);
   const nextPage = () => setOffset(offset => offset + 25, count);
 
-  
   return {
     offset, 
     prevPage,
@@ -23,4 +22,3 @@ export const usePaginationHooks = () =>  {
     />)
   };
 };
-
