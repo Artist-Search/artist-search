@@ -21,12 +21,7 @@ export const getOneArtist = (artistId) => {
 };
 
 export const getCoverArt = (releaseId) => {
-  return fetch(`http://coverartarchive.org/release/${releaseId}front`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
+  return fetch(`http://coverartarchive.org/release/${releaseId}front`)
     .then(res => res.json()
     );
 };
@@ -43,12 +38,7 @@ export const getRecordingsList = (releaseId) => {
 };
 
 export const getLyrics = (artistName, songTitle) => {
-  return fetch(`https://api.lyrics.ovh/v1/${artistName}/${songTitle}`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
+  return fetch(`https://api.lyrics.ovh/v1/${artistName}/${songTitle}`)
     .then(res => res.json()
     );
 };
