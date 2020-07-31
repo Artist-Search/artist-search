@@ -7,7 +7,7 @@ const Pagination = ({ offset, prevPage, nextPage, count }) => (
   <>
     <button disable={offset === 0} onClick={prevPage} >Previous</button>
 
-    <button disable={offset >= count} onClick={nextPage}>Next</button>
+    <button disable={offset > count} onClick={nextPage}>Next</button>
   </>
 );
 
