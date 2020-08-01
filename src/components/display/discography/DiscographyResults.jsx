@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DiscographyList from './DiscographyList';
 
-const DiscographyResults = ({ id }) => (
+const DiscographyResults = ({ discography }) => (
   <section>
-    <DiscographyList id={id} />
+    <DiscographyList discography={discography} />
   </section>
 );
 
 DiscographyResults.propTypes = {
-  id: PropTypes.string.isRequired
+  discography: PropTypes.array.isRequired
 };
 
 export default DiscographyResults;
