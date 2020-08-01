@@ -15,8 +15,10 @@ export const useArtistSearchHooks = () => {
       .finally(() => setLoading(false));
   }, []);
 
+
   return {
     artist,
     loading 
   };
+ 
 };

@@ -2,22 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const DiscographyItem = ({ artistName, albumName, artistId, albumId, albumImage  }) => (
-  <section key={albumId}>
-    <h1>{artistName}</h1>
-    <Link to={`/discography/${artistName}&${artistId}`}>
-      <img src={albumImage} />
-      <p>{albumName}</p>
+const DiscographyItem = ({ id, name }) => (
+  <section key={id}>
+    <Link to={`/discography/${name}&${id}`}>
+      <p>{name}</p>
     </Link>
   </section>
 );
 
 DiscographyItem.propTypes = {
-  artistName: PropTypes.string.isRequired,
-  albumName: PropTypes.string.isRequired,
-  artistId: PropTypes.string.isRequired,
-  albumId: PropTypes.string.isRequired,
-  albumImage: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
 };
 
 export default DiscographyItem;
