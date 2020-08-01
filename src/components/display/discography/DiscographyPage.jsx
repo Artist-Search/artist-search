@@ -1,11 +1,8 @@
 import React from 'react';
-import DiscographyResults from '../discography/DiscographyResults';
+import DiscographyItem from '../discography/DiscographyItem';
 // import Pagination from '../../pagination/Pagination';
 // import { getOneArtist } from '../../../services/getArtists';
 import { useDiscographysHooks } from '../../../hooks/discographyHooks';
-
-// import PropTypes from 'prop-types';
-
 
 const DiscographyPage = () => {
   
@@ -22,8 +19,8 @@ const DiscographyPage = () => {
   return (
     
     <div>
-      {/* <DiscographyResults discography={discography}/> */}
-      This is the Discography Page
+      <h3>Albums by {name}</h3>
+      <DiscographyItem discography={discography} name={name} id={id}/>
     </div>
   );
 };
