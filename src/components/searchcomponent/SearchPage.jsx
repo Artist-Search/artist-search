@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SearchForm from './SearchForm';
-import ArtistSearchResults from '../display/ArtistSearchResults';
+import ArtistSearchResults from '../display/search/ArtistSearchResults';
 import Pagination from '../pagination/Pagination';
 import { getArtists } from '../../services/getArtists';
 

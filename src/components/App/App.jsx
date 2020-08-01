@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom'; 
 import SearchPage from '../searchcomponent/SearchPage';
 // import ArtistSearchResults from '../display/ArtistSearchResults';
-import DiscographyPage from '../display/DiscographyPage';
+import DiscographyPage from '../display/discography/DiscographyPage';
 
 export default function App() {
   return (
