@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Pagination = ({ offset, prevPage, nextPage, count }) => (
-
-  
   <>
     <button disable={offset === 0} onClick={prevPage} >Previous</button>
 

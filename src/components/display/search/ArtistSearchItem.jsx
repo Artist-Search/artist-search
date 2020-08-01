@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const ArtistSearchItem = ({ id, name }) => (
   <section key={id}>
-    <Link to={`/discography/${name}&${id}`}>
+    <Link to={`/discography/${name}/${id}`}>
       <p>{name}</p>
     </Link>
   </section>

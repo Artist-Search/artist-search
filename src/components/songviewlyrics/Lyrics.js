@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Lyrics = ({ title, lyrics }) => {
+const Lyrics = ({ songTitle, lyrics }) => {
   return (
     <>
-      <h1>{title}</h1>
+      <h1>{songTitle}</h1>
       <div>
         <p>{lyrics}</p>
       </div>
@@ -14,10 +14,7 @@ const Lyrics = ({ title, lyrics }) => {
 
 Lyrics.propTypes = {
   lyrics: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
+  songTitle: PropTypes.string.isRequired
 };
 
 export default Lyrics;
-
-
-
