@@ -42,7 +42,6 @@ export default class SearchPage extends Component {
     event.preventDefault();
     const { searchQuery } = this.state;
     return getArtists(searchQuery, this.offset)
-      // .find(this.state.count)
       .then(searchResults => this.setState(state => ({
         ...state,
         searchResults

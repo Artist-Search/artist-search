@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import ArtistSearchResults from '../components/display/ArtistSearchResults';
+import { useState, useEffect } from 'react';
 import { getArtists } from '../services/getArtists.jsx';
-import { useHandleSubmit } from './handelChangeSubmit';
 
 export const useArtistSearchHooks = () => {
   const [artist, setArtist] = useState([]);
@@ -9,7 +7,7 @@ export const useArtistSearchHooks = () => {
 
   useEffect(() => {
     getArtists()
-      .then(({ artists }) => {
+      .then(({ artist }) => {
         setArtist(artist);
       })
       .finally(() => setLoading(false));

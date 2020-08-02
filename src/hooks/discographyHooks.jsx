@@ -7,7 +7,6 @@ export const useDiscographysHooks = () => {
   const [discography, setDiscography] = useState([]);
   const { offset, count } = usePaginationHooks();
 
-  // const [count, setCount] = useState(0);
   const { id } = useParams();
   const { name } = useParams();
 
