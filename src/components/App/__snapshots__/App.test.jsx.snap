@@ -8,6 +8,23 @@ exports[`App component renders App 1`] = `
       exact={true}
       path="/"
     />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/discography/:name/:id"
+    />
+    <Route
+      component={[Function]}
+      path="/album/:name/:id"
+    />
+    <Route
+      component={[Function]}
+      path="/albumdetails/:name/:albumid"
+    />
+    <Route
+      component={[Function]}
+      path="/lyrics/:name/:title"
+    />
   </Switch>
 </BrowserRouter>
 `;
