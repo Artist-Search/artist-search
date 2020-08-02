@@ -30,4 +30,3 @@ DiscographyPage.propTypes = {
 };
 
 export default DiscographyPage;
-

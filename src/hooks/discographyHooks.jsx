@@ -5,7 +5,8 @@ import { usePaginationHooks } from '../hooks/paginationHooks';
 
 export const useDiscographysHooks = () => {
   const [discography, setDiscography] = useState([]);
-  const { offset } = usePaginationHooks();
+  const { offset, count } = usePaginationHooks();
+
   // const [count, setCount] = useState(0);
   const { id } = useParams();
   const { name } = useParams();
@@ -18,6 +19,8 @@ export const useDiscographysHooks = () => {
   return {
     discography, 
     id, 
-    name
+    name, 
+    offset, 
+    count
   };
 };

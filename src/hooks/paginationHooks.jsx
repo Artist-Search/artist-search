@@ -1,5 +1,6 @@
 import React, { useState }  from 'react';
 import Pagination from '../components/pagination/Pagination';
+import { getOneArtist } from '../services/getArtists';
 
 export const usePaginationHooks = () =>  {
   const [offset, setOffset] = useState(0);
