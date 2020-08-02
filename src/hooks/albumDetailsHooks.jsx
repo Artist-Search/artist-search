@@ -8,13 +8,13 @@ export const useAlbumDetailHooks = () => {
   const { albumid } = useParams();
   const { name } = useParams();
 
-  console.log(albumid);
+  // console.log(albumid);
   useEffect(() => {
     getRecordingsList(albumid)
       .then(({ recordings }) => setAlbum(recordings));
   }, []);
 
-  console.log('album', album);
+  // console.log('album', album);
   return {
     album, 
     albumid, 

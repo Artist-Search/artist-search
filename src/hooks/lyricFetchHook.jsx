@@ -7,14 +7,12 @@ export const useLyricsHooks = () => {
   
   const { name, title } = useParams();
 
-
   useEffect(() => {
     getLyrics(name, title)
       .then(lyrics => setLyrics(lyrics));
   }, []);
-
-  console.log('name', name);
-  console.log('title', title);
+  // console.log('name', name);
+  // console.log('title', title);
 
   return {
     lyrics

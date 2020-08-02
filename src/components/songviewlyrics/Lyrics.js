@@ -11,7 +11,7 @@ const Lyrics = () => {
 
   const { name, title } = useParams();
 
-  console.log('lyrics', lyrics);
+  // console.log('lyrics', lyrics);
   return (
     <>
       <div>

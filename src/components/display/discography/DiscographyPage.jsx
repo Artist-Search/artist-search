@@ -1,7 +1,5 @@
 import React from 'react';
 import DiscographyItem from '../discography/DiscographyItem';
-// import Pagination from '../../pagination/Pagination';
-// import { getOneArtist } from '../../../services/getArtists';
 import { useDiscographysHooks } from '../../../hooks/discographyHooks';
 
 const DiscographyPage = () => {
@@ -12,9 +10,9 @@ const DiscographyPage = () => {
     name
   } = useDiscographysHooks();
 
-  console.log(name);
-  console.log(id);
-  console.log(discography);
+  // console.log(name);
+  // console.log(id);
+  // console.log(discography);
   
   return (
     
@@ -23,10 +21,6 @@ const DiscographyPage = () => {
       <DiscographyItem discography={discography} name={name} id={id}/>
     </div>
   );
-};
-
-DiscographyPage.propTypes = {
-
 };
 
 export default DiscographyPage;
