@@ -46,8 +46,8 @@ export const getRecordingsList = (albumid) => {
     );
 };
 
-export const getLyrics = (artistName, songTitle) => {
-  return fetch(`https://api.lyrics.ovh/v1/${artistName}/${songTitle}`)
+export const getLyrics = (name, title) => {
+  return fetch(`https://api.lyrics.ovh/v1/${name}/${title}`)
     .then(res => res.json()
     );
 };
