@@ -2,6 +2,7 @@ import React from 'react';
 import { useAlbumDetailHooks } from '../../../hooks/albumDetailsHooks';
 import { getRecordingsList } from '../../../services/getArtists';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // console.log(discography);
 const AlbumDetails = () => {
@@ -21,10 +22,12 @@ const AlbumDetails = () => {
 
   return album.map((album) => (
     <>
-      <section key={album.id}>
-        <h4>{album.title}</h4>
-      </section>
+      <Link to={`/lyrics/${name}/${album.title}`}>
 
+        <section key={album.id}>
+          <h4>{album.title}</h4>
+        </section>
+      </Link>
     </>
 
   ));

@@ -1,15 +1,20 @@
 import { useState, useEffect } from 'react';
-import { useRouteMatch } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getLyrics } from '../services/getArtists.js';
 
 export const useLyricsHooks = () => {
   const [lyrics, setLyrics] = useState([]);
-  const match = useRouteMatch('/:artistName/:songTitle');
+  
+  const { name, title } = useParams();
+
 
   useEffect(() => {
-    getLyrics(match.params.artistName, match.params.songTitle)
+    getLyrics(name, title)
       .then(lyrics => setLyrics(lyrics));
   }, []);
+
+  console.log('name', name);
+  console.log('title', title);
 
   return {
     lyrics
