@@ -8,6 +8,7 @@ import SearchPage from '../searchcomponent/SearchPage';
 // import ArtistSearchResults from '../display/ArtistSearchResults';
 import DiscographyPage from '../display/discography/DiscographyPage';
 import AlbumsPage from '../display/albums/AlbumsPage';
+import AlbumDetails from '../../components/display/albumdetails/AlbumDetails';
 
 // function Artist() {
 //   let { id, name } = useParams();
@@ -24,6 +25,8 @@ export default function App() {
         <Route exact path="/discography/:name/:id" component={DiscographyPage} > 
         </Route>
         <Route path="/album/:name/:id" component={AlbumsPage} />
+        <Route path="/albumdetails/:name/:albumid" component={AlbumDetails} />
+
       </Switch>
     </Router>
   );

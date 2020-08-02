@@ -35,8 +35,8 @@ export const getCoverArt = (releaseId) => {
     );
 };
 
-export const getRecordingsList = (releaseId) => {
-  return fetch(`http://musicbrainz.org/ws/2/recording?release=${releaseId}&fmt=json`, {
+export const getRecordingsList = (albumid) => {
+  return fetch(`http://musicbrainz.org/ws/2/recording?release=${albumid}&fmt=json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'

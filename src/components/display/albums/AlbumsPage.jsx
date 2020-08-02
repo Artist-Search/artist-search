@@ -1,8 +1,9 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import { useDiscographysHooks } from '../../../hooks/discographyHooks';
-import { getCoverArt } from '../../../services/getArtists';
 import ReactImageFallback from 'react-image-fallback';
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const AlbumsPage = () => {
 
@@ -10,17 +11,23 @@ const AlbumsPage = () => {
     discography
   } = useDiscographysHooks();
 
+  const { name } = useParams();
 
   console.log(discography);
   return discography.map((discography) => (
-    <section key={discography.releaseId}>
-      <h4>{discography.title}</h4>
-      <ReactImageFallback 
-        src={`http://coverartarchive.org/release/${discography.releaseId}/front`} 
-        fallbackImage={'https://images-na.ssl-images-amazon.com/images/I/81JVkQR1mtL._AC_SY450_.jpg'}
-        width='250px'/>
+    <>
+      <Link to={`/albumdetails/${name}/${discography.releaseId}`}>
+        <section key={discography.releaseId}>
       
-    </section>
+          <h4>{discography.title}</h4>
+          <ReactImageFallback 
+            src={`http://coverartarchive.org/release/${discography.releaseId}/front`} 
+            fallbackImage={'https://images-na.ssl-images-amazon.com/images/I/81JVkQR1mtL._AC_SY450_.jpg'}
+            width='250px'/>
+     
+        </section>
+      </Link>
+    </>
 
   ));
 };
