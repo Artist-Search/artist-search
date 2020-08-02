@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SearchForm from './SearchForm';
-import ArtistSearchResults from '../display/ArtistSearchResults';
+import ArtistSearchResults from '../display/search/ArtistSearchResults';
 import Pagination from '../pagination/Pagination';
 import { getArtists } from '../../services/getArtists';
 
@@ -42,7 +42,6 @@ export default class SearchPage extends Component {
     event.preventDefault();
     const { searchQuery } = this.state;
     return getArtists(searchQuery, this.offset)
-      // .find(this.state.count)
       .then(searchResults => this.setState(state => ({
         ...state,
         searchResults

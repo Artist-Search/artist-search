@@ -1,50 +1,26 @@
-import React, { Component } from 'react';
-import DiscographyResults from '../discography/DiscographyResults';
-import Pagination from '../pagination/Pagination';
-import { getOneArtist } from '../services/getArtists';
+import React from 'react';
+import DiscographyItem from '../discography/DiscographyItem';
+import { useDiscographysHooks } from '../../../hooks/discographyHooks';
 
-export default class DiscographyPage extends Component {
-  state = {
-    artistName: '',
-    albumName: '',
-    artistId: '',
-    albumId: '',
-    albumImage: '',
-    offset: 0
-  }
+const DiscographyPage = () => {
+  
+  const {
+    discography,
+    id,
+    name
+  } = useDiscographysHooks();
 
-  prevPage = () => {
-    const offset = this.state.offset - 25;
-    return getOneArtist(this.state.artistId, offset)
-      .then( => this.setState(state => ({
-        ...state,
-        artistName,
-        albums,
-        offset
-      })));
-  }
+  // console.log(name);
+  // console.log(id);
+  // console.log(discography);
+  
+  return (
+    
+    <div>
+      <h3>Albums by {name}</h3>
+      <DiscographyItem discography={discography} name={name} id={id}/>
+    </div>
+  );
+};
 
-  nextPage = () => {
-    const offset = this.state.offset + 25;
-    return getOneArtist(this.state.searchQuery, offset)
-      .then(searchResults => this.setState(state => ({
-        ...state,
-        artistName,
-        albums,
-        offset
-      })));
-  }
-
-  render() {
-    const { artistName } = this.state;
-    const { albums } = this.state;
-
-    return (
-      <>
-        <Pagination count={count} offset={offset} prevPage={this.prevPage} nextPage={this.nextPage} />
-
-        <DiscographyResults id={id} />
-      </>
-    );
-  }
-}
+export default DiscographyPage;

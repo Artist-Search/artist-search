@@ -1,5 +1,4 @@
-import DiscographyList from './DiscographyList';
-import { withList } from '../hoc/withList';
+import DiscographyItem from './DiscographyItem';
+import { withList } from '../../hoc/withList';
 
-//check to make sure we have the correct params
-export default withList (DiscographyList, 'releases', 'title', 'id');
+export default withList (DiscographyItem, 'discography', 'releaseId');
